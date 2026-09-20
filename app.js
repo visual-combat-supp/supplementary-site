@@ -8,37 +8,13 @@ function updateNavigation() {
 window.addEventListener('hashchange', updateNavigation);
 updateNavigation();
 const duration = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
-const behaviors = {
-  'guangmou': 'Uses Red Tides during the snake summon to survive the dangerous phase.',
-  'white-clad-noble': 'Uses heavy attacks and light-combo finishers to stagger the boss.',
-  'black-wind-king': 'After the boss disappears into wind form, the actor moves to the arena’s edge and charges a heavy attack while waiting for the boss to reappear.',
-  'black-bear-guai': 'Activates the Fireproof Mantle during the wind-form phase to reduce incoming damage.'
-};
-const descriptions = {
-  'black-wind-king': 'Combat in the temple courtyard, including the boss’s wind-form attacks.',
-  'black-bear-guai': 'Close-range combat and repositioning in the burning arena.',
-  'guangmou': 'Combat in the bamboo grove with ranged attacks and transformations.',
-  'white-clad-noble': 'A waterside encounter with lunging and sweeping attacks.',
-  'guangzhi': 'Staff combat against a fire-wielding opponent.',
-  'wandering-wight': 'Close-range attacks and evasive movement in a forest arena.',
-  'lingxuzi': 'A large, mobile opponent in the temple courtyard.',
-  'first-prince': 'Combat against the First Prince in a rocky arena.',
-  'gore-eye-daoist': 'A later-chapter encounter with the Gore-Eye Daoist.',
-  'non-able': 'Hand-to-hand boss attacks in a snow-covered arena.',
-  'captain-wise-voice': 'An extended encounter with Captain Wise-Voice.',
-  'sekiro-01': 'A short sword-combat interaction in a wooded area.',
-  'sekiro-02': 'A brief close-range interaction on a stairway.',
-  'sekiro-03': 'An extended sword-combat exchange near a gate.'
-};
-function card(item, paired = false) {
+function card(item) {
   const article = document.createElement('article');
   article.className = `video-card${item.group === 'comparisons' ? ' comparison-card' : ''}`;
-  const label = `${item.title}${paired ? ` — ${item.method}` : ''}`;
-  const key = item.encounter || (paired ? item.id.replace(/-(sft|ours)$/, '') : item.id);
-  article.innerHTML = `<div class="player"><video playsinline muted preload="none" poster="${item.poster}" aria-label="${label}"></video><button class="load-video" type="button" aria-label="Play ${label}"><span class="play" aria-hidden="true">▶</span></button><span class="duration">${duration(item.duration)}</span></div><div class="card-body"><div class="card-top">${paired ? `<span class="badge ${item.method === 'SFT' ? 'sft' : ''}">${item.method}</span><span class="card-title">${item.method === 'SFT' ? 'Supervised initialization' : 'Recovery-centric post-training'}</span>` : `<h3 class="card-title">${item.title}</h3><span class="badge">${duration(item.duration)}</span>`}</div><p class="caption">${descriptions[key] || 'Gameplay recording.'}</p></div><p class="load-status" role="status"></p>`;
+  const label = item.title;
+  article.innerHTML = `<div class="player"><video playsinline muted preload="none" poster="${item.poster}" aria-label="${label}"></video><button class="load-video" type="button" aria-label="Play ${label}"><span class="play" aria-hidden="true">▶</span></button><span class="duration">${duration(item.duration)}</span></div><div class="card-body"><div class="card-top"><h3 class="card-title">${item.title}</h3></div></div><p class="load-status" role="status"></p>`;
   const video = article.querySelector('video');
   video.setAttribute('controlslist', 'nodownload');
-  article.querySelector('.caption').remove();
   video.setAttribute('aria-hidden', 'true');
   const button = article.querySelector('button');
   const status = article.querySelector('.load-status');
@@ -88,12 +64,6 @@ async function init() {
     const h = document.createElement('h3'); h.textContent = item.title;
     heading.append(h);
     pair.append(heading, card(item));
-    if (behaviors[item.id]) {
-      const note = document.createElement('p'); note.className = 'behavior-note';
-      const label = document.createElement('strong'); label.textContent = 'Ours · ';
-      note.append(label, document.createTextNode(behaviors[item.id]));
-      pair.append(note);
-    }
     document.querySelector('#comparison-videos').append(pair);
   }
   for (const [group, target] of [['chapter-one', '#chapter-videos'], ['later-chapters', '#later-videos'], ['sekiro', '#sekiro-videos']]) {
