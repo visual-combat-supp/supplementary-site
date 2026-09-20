@@ -1,8 +1,6 @@
 'use strict';
 (async function () {
-  const response = await fetch('results.json');
-  if (!response.ok) throw new Error('Results unavailable');
-  const data = await response.json();
+  const data = JSON.parse(document.getElementById('results-data').textContent);
   let config = 'native', metric = 'hp', boss = 0;
   const methods = Object.keys(data.configurations.native.series);
   const format = (v, m) => m === 'hp' ? v.toFixed(2) : String(v);

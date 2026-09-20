@@ -80,9 +80,7 @@ function card(item, paired = false) {
   return article;
 }
 async function init() {
-  const response = await fetch('media.json');
-  if (!response.ok) throw new Error('catalog');
-  const items = await response.json();
+  const items = JSON.parse(document.getElementById('media-data').textContent);
   const paired = items.filter(x => x.group === 'comparisons');
   for (const item of paired) {
     const pair = document.createElement('div'); pair.className = 'pair';
