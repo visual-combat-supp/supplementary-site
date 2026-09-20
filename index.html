@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anonymous supplementary gameplay videos for VLM-Coached Recovery-Centric Online Post-Training for Real-Time Visual Combat.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
+  <title>Real-Time Visual Combat · Anonymous Supplementary Material</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23163840'/%3E%3Cpath d='m12 8 13 8-13 8z' fill='%23f5b17d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="refinement.css">
+  <script src="app.js" defer></script>
+  <script src="results.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#comparisons">Skip to videos</a>
+  <header class="masthead wrap">
+    <div class="eyebrow"><span class="mark" aria-hidden="true">▶</span> Anonymous Supplementary Material</div>
+    <h1>VLM-Coached Recovery-Centric Online Post-Training for Real-Time Visual Combat</h1>
+    <figure class="framework">
+      <img src="assets/teaser-overview.png" width="2250" height="831" alt="Figure 1: combat behaviors, real-time actor inference loop, and selected native-configuration results.">
+      <figcaption><span>Figure 1 · Real-time visual combat and native-configuration results</span></figcaption>
+    </figure>
+    <p class="figure-note">The compact actor maps screen pixels and action history to keyboard-and-mouse actions while the game runs continuously. The plots summarize performance on four bosses under the native configuration. Numerical overlays are recording instrumentation, not actor inputs.</p>
+  </header>
+  <nav class="nav" aria-label="Page sections"><div class="wrap nav-inner"><a href="#framework">Framework</a><a href="#results">Results</a><a href="#combatvla">CombatVLA</a><a href="#comparisons">SFT vs. Ours</a><a href="#chapter-one">Chapter 1</a><a href="#later-chapters">Held-out bosses</a><a href="#sekiro">Sekiro</a></div></nav>
+  <main class="wrap">
+    <section id="framework" aria-labelledby="framework-heading">
+      <h2 id="framework-heading">Framework</h2>
+      <figure class="framework">
+        <img loading="lazy" src="assets/framework-overview.png" width="2800" alt="Figure 2: recovery-library initialization and online post-training with hybrid feedback, curated replay and human demonstrations.">
+        <figcaption><span>Figure 2 · Recovery-library initialization and online post-training</span></figcaption>
+      </figure>
+      <p class="figure-note">VLM diagnosis of initial rollouts guides the collection of targeted human recovery demonstrations. Online post-training combines rollout feedback, curated replay, and supervised learning from demonstrations, with recurring failures guiding recovery-data retrieval and further collection in the early rounds.</p>
+    </section>
+    <section id="results" aria-labelledby="results-heading">
+      <div class="section-heading"><h2 id="results-heading">Quantitative results</h2><span class="section-meta">Seven bosses · Table 1</span></div>
+      <div class="results-toolbar">
+        <div class="config-switch" role="group" aria-label="Evaluation configuration">
+          <button type="button" data-config="native" aria-pressed="true">Native</button>
+          <button type="button" data-config="controlled" aria-pressed="false">Attack 50 / Defense 600</button>
+        </div>
+        <div class="config-switch metric-switch" role="group" aria-label="Metric"><button type="button" data-metric="hp" aria-pressed="true">HP reduction</button><button type="button" data-metric="win" aria-pressed="false">Win rate</button></div>
+      </div>
+      <p class="section-note" id="configuration-note" aria-live="polite">Native Chapter-1 attributes · 20 episodes per method per boss.</p>
+      <div id="boss-switch" class="boss-switch" role="group" aria-label="Boss"></div>
+      <div class="result-dashboard">
+        <div class="result-bars-panel">
+          <div class="chart-heading"><h3 id="selected-boss">Guangzhi</h3><span id="selected-metric">Normalized Boss HP Reduction (%)</span></div>
+          <div id="method-bars" class="method-bars" aria-label="Method comparison"></div>
+          <div class="bar-axis" aria-hidden="true"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div>
+        </div>
+        <aside class="result-summary" aria-label="Ours results" aria-live="polite"></aside>
+      </div>
+      <p class="results-source">Same trained checkpoint in both configurations.</p>
+      <details class="full-results"><summary>Results across all seven bosses</summary><div class="table-scroll"><table id="full-results-table"></table></div></details>
+      <p id="results-error" role="alert" hidden></p>
+    </section>
+    <section id="combatvla" aria-labelledby="combatvla-heading">
+      <div class="section-heading"><h2 id="combatvla-heading">CombatVLA benchmark</h2><span class="section-meta">13 tasks · Table 2</span></div>
+      <p class="section-note">Win rate (%) compared with published CombatVLA results.</p>
+      <div class="benchmark-legend"><span><i class="combat-key"></i>CombatVLA</span><span><i class="ours-key"></i>Ours</span></div>
+      <div id="combatvla-charts"><div class="benchmark-panel"><h3>Black Myth: Wukong</h3><div class="benchmark-axis" aria-hidden="true"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div><div class="benchmark-row" role="img" aria-label="WolfScout: CombatVLA 100%, Ours 100%"><span class="benchmark-task">WolfScout</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:100%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>100</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="WolfStalwart: CombatVLA 100%, Ours 100%"><span class="benchmark-task">WolfStalwart</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:100%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>100</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="WolfSwornsword: CombatVLA 100%, Ours 100%"><span class="benchmark-task">WolfSwornsword</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:100%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>100</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="WolfSoldier: CombatVLA 100%, Ours 100%"><span class="benchmark-task">WolfSoldier</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:100%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>100</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="Croaky: CombatVLA 100%, Ours 100%"><span class="benchmark-task">Croaky</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:100%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>100</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="Crow Diviner: CombatVLA 80%, Ours 100%"><span class="benchmark-task">Crow Diviner</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:80%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>80</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="Bandit Chief: CombatVLA 70%, Ours 100%"><span class="benchmark-task">Bandit Chief</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:70%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>70</span><strong>100</strong></div></div><div class="benchmark-row" role="img" aria-label="Bullguard: CombatVLA 60%, Ours 75%"><span class="benchmark-task">Bullguard</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:60%"></span></div><div class="benchmark-track ours"><span style="width:75%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>60</span><strong>75</strong></div></div><div class="benchmark-row" role="img" aria-label="Wandering Wight: CombatVLA 10%, Ours 95%"><span class="benchmark-task">Wandering Wight</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:10%"></span></div><div class="benchmark-track ours"><span style="width:95%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>10</span><strong>95</strong></div></div><div class="benchmark-row" role="img" aria-label="Guangzhi: CombatVLA 10%, Ours 100%"><span class="benchmark-task">Guangzhi</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:10%"></span></div><div class="benchmark-track ours"><span style="width:100%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>10</span><strong>100</strong></div></div></div><div class="benchmark-panel"><h3>Sekiro: Shadows Die Twice</h3><div class="benchmark-axis" aria-hidden="true"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div><div class="benchmark-row" role="img" aria-label="Katana: CombatVLA 90%, Ours 90%"><span class="benchmark-task">Katana</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:90%"></span></div><div class="benchmark-track ours"><span style="width:90%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>90</span><strong>90</strong></div></div><div class="benchmark-row" role="img" aria-label="Hassou Stance: CombatVLA 70%, Ours 80%"><span class="benchmark-task">Hassou Stance</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:70%"></span></div><div class="benchmark-track ours"><span style="width:80%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>70</span><strong>80</strong></div></div><div class="benchmark-row" role="img" aria-label="Shigenori Yamauchi: CombatVLA 60%, Ours 30%"><span class="benchmark-task">Shigenori Yamauchi</span><div class="benchmark-pair" aria-hidden="true"><div class="benchmark-track"><span style="width:60%"></span></div><div class="benchmark-track ours"><span style="width:30%"></span></div></div><div class="benchmark-values" aria-hidden="true"><span>60</span><strong>30</strong></div></div></div></div><!-- benchmark-end -->
+      <p class="benchmark-note">CombatVLA: 10 trials per task with inference-time pauses. Ours: 20 episodes with continuous gameplay. Wandering Wight and Guangzhi use matched Attack 100 / Defense 600; other tasks retain their respective evaluation configurations. Ours uses no Sekiro-specific training.</p>
+    </section>
+    <section id="comparisons" aria-labelledby="comparison-heading">
+      <div class="section-heading"><h2 id="comparison-heading">SFT vs. Ours</h2><span class="section-meta">Black Myth: Wukong</span></div>
+      <div id="comparison-videos" class="comparison-list"></div>
+    </section>
+    <section id="chapter-one" aria-labelledby="chapter-heading">
+      <div class="section-heading"><h2 id="chapter-heading">Chapter 1</h2><span class="section-meta">7 bosses · Black Myth: Wukong</span></div>
+      <div id="chapter-videos" class="video-grid"></div>
+    </section>
+    <section id="later-chapters" aria-labelledby="later-heading">
+      <div class="section-heading"><h2 id="later-heading">Held-out bosses</h2><span class="section-meta">Black Myth: Wukong</span></div>
+      <div id="later-videos" class="video-grid"></div>
+    </section>
+    <section id="sekiro" aria-labelledby="sekiro-heading">
+      <div class="section-heading"><h2 id="sekiro-heading">Sekiro: Shadows Die Twice</h2><span class="section-meta">Zero-shot transfer</span></div>
+      <div id="sekiro-videos" class="video-grid"></div>
+    </section>
+    <noscript><p>Enable JavaScript to browse the video gallery.</p></noscript>
+    <p id="page-error" role="alert" hidden></p>
+  </main>
+  <footer class="wrap"><span>Anonymous Supplementary Material</span><a href="#top" aria-label="Back to top">Back to top ↑</a></footer>
+</body>
+</html>

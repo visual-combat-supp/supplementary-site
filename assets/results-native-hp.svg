@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 452" role="img" aria-labelledby="title desc">
+<title id="title">Normalized Boss HP Reduction (%) — Native Chapter 1</title>
+<desc id="desc">SFT is the upper sand-colored bar and Ours is the lower rose-colored bar for each boss. Values are percentages from Table 1.</desc>
+<rect width="600" height="452" fill="white"/>
+<g font-family="system-ui, sans-serif" font-size="13" fill="#163840">
+<path d="M160.0 18V405" stroke="#e4eae9"/>
+<text x="160.0" y="429" text-anchor="middle" fill="#596c71">0</text>
+<path d="M256.5 18V405" stroke="#e4eae9"/>
+<text x="256.5" y="429" text-anchor="middle" fill="#596c71">25</text>
+<path d="M353.0 18V405" stroke="#e4eae9"/>
+<text x="353.0" y="429" text-anchor="middle" fill="#596c71">50</text>
+<path d="M449.5 18V405" stroke="#e4eae9"/>
+<text x="449.5" y="429" text-anchor="middle" fill="#596c71">75</text>
+<path d="M546.0 18V405" stroke="#e4eae9"/>
+<text x="546.0" y="429" text-anchor="middle" fill="#596c71">100</text>
+<text x="145" y="47" text-anchor="end">Guangzhi</text>
+<rect x="160" y="27" width="254.297" height="15" rx="2" fill="#dfc393"><title>Guangzhi — SFT: 65.88%</title></rect>
+<text x="419.297" y="39" font-size="12" font-weight="400">65.88</text>
+<rect x="160" y="47" width="274.099" height="15" rx="2" fill="#d76573"><title>Guangzhi — Ours: 71.01%</title></rect>
+<text x="439.099" y="59" font-size="12" font-weight="600">71.01</text>
+<text x="145" y="101" text-anchor="end">Wandering Wight</text>
+<rect x="160" y="81" width="122.401" height="15" rx="2" fill="#dfc393"><title>Wandering Wight — SFT: 31.71%</title></rect>
+<text x="287.401" y="93" font-size="12" font-weight="400">31.71</text>
+<rect x="160" y="101" width="218.437" height="15" rx="2" fill="#d76573"><title>Wandering Wight — Ours: 56.59%</title></rect>
+<text x="383.437" y="113" font-size="12" font-weight="600">56.59</text>
+<text x="145" y="155" text-anchor="end">Lingxuzi</text>
+<rect x="160" y="135" width="280.738" height="15" rx="2" fill="#dfc393"><title>Lingxuzi — SFT: 72.73%</title></rect>
+<text x="445.738" y="147" font-size="12" font-weight="400">72.73</text>
+<rect x="160" y="155" width="282.166" height="15" rx="2" fill="#d76573"><title>Lingxuzi — Ours: 73.10%</title></rect>
+<text x="447.166" y="167" font-size="12" font-weight="600">73.10</text>
+<text x="145" y="209" text-anchor="end">Guangmou</text>
+<rect x="160" y="189" width="248.352" height="15" rx="2" fill="#dfc393"><title>Guangmou — SFT: 64.34%</title></rect>
+<text x="413.352" y="201" font-size="12" font-weight="400">64.34</text>
+<rect x="160" y="209" width="285.061" height="15" rx="2" fill="#d76573"><title>Guangmou — Ours: 73.85%</title></rect>
+<text x="450.061" y="221" font-size="12" font-weight="600">73.85</text>
+<text x="145" y="263" text-anchor="end">White-Clad Noble</text>
+<rect x="160" y="243" width="113.870" height="15" rx="2" fill="#dfc393"><title>White-Clad Noble — SFT: 29.50%</title></rect>
+<text x="278.870" y="255" font-size="12" font-weight="400">29.50</text>
+<rect x="160" y="263" width="268.000" height="15" rx="2" fill="#d76573"><title>White-Clad Noble — Ours: 69.43%</title></rect>
+<text x="433.000" y="275" font-size="12" font-weight="600">69.43</text>
+<text x="145" y="317" text-anchor="end">Black Wind King</text>
+<rect x="160" y="297" width="150.926" height="15" rx="2" fill="#dfc393"><title>Black Wind King — SFT: 39.10%</title></rect>
+<text x="315.926" y="309" font-size="12" font-weight="400">39.10</text>
+<rect x="160" y="317" width="226.080" height="15" rx="2" fill="#d76573"><title>Black Wind King — Ours: 58.57%</title></rect>
+<text x="391.080" y="329" font-size="12" font-weight="600">58.57</text>
+<text x="145" y="371" text-anchor="end">Black Bear Guai</text>
+<rect x="160" y="351" width="122.864" height="15" rx="2" fill="#dfc393"><title>Black Bear Guai — SFT: 31.83%</title></rect>
+<text x="287.864" y="363" font-size="12" font-weight="400">31.83</text>
+<rect x="160" y="371" width="230.674" height="15" rx="2" fill="#d76573"><title>Black Bear Guai — Ours: 59.76%</title></rect>
+<text x="395.674" y="383" font-size="12" font-weight="600">59.76</text>
+</g></svg>
