@@ -8,6 +8,12 @@ function updateNavigation() {
 window.addEventListener('hashchange', updateNavigation);
 updateNavigation();
 const duration = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+const behaviors = {
+  'guangmou': 'Uses Red Tides during the snake summon to survive the dangerous phase.',
+  'white-clad-noble': 'Uses heavy attacks and light-combo finishers to stagger the boss.',
+  'black-wind-king': 'After the boss disappears into wind form, the actor moves to the arena’s edge and charges a heavy attack while waiting for the boss to reappear.',
+  'black-bear-guai': 'Activates the Fireproof Mantle during the wind-form phase to reduce incoming damage.'
+};
 function card(item) {
   const article = document.createElement('article');
   article.className = `video-card${item.group === 'comparisons' ? ' comparison-card' : ''}`;
@@ -64,6 +70,12 @@ async function init() {
     const h = document.createElement('h3'); h.textContent = item.title;
     heading.append(h);
     pair.append(heading, card(item));
+    if (behaviors[item.id]) {
+      const note = document.createElement('p'); note.className = 'behavior-note';
+      const label = document.createElement('strong'); label.textContent = 'Ours · ';
+      note.append(label, document.createTextNode(behaviors[item.id]));
+      pair.append(note);
+    }
     document.querySelector('#comparison-videos').append(pair);
   }
   for (const [group, target] of [['chapter-one', '#chapter-videos'], ['later-chapters', '#later-videos'], ['sekiro', '#sekiro-videos']]) {

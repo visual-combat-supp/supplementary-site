@@ -4,4 +4,5 @@ h2{font-size:28px;font-weight:650;letter-spacing:-.025em}h3{font-weight:600}
 .masthead{padding-top:36px;padding-bottom:28px}.eyebrow{letter-spacing:.06em;text-transform:none;font-weight:500;color:var(--muted)}
 main>section{padding-top:40px}main>#comparisons{padding-top:16px}.section-heading{margin-bottom:20px}
 .nav{background:#f0f4ed}.nav a[aria-current=location]{background:#dde7d9}
+.behavior-note{font-size:15px;line-height:1.7;padding:16px 20px;background:#edf2ec;border:1px solid #dce5da;border-radius:7px}
 @media(max-width:700px){.masthead{padding-top:24px;padding-bottom:22px}h1{font-size:28px}h2{font-size:24px}main>section{padding-top:30px}}
